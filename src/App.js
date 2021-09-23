@@ -5,6 +5,7 @@ import {
   Route 
 } from "react-router-dom";
 import Home from "./components/Home";
+import Slideshow from "./components/Slideshow";
 
 function App() {
   return (
@@ -16,17 +17,17 @@ function App() {
               <Link to="/">Logo</Link>
             </li>
             <li>
-              <Link to="/slideshow">Logo</Link>
+              <Link to="/slideshow">Start Slideshow</Link>
             </li>
           </ul>
         </nav>
       </div>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/slideshow">
-          <SlideShow />
+        <Route exact path="/slideshow">
+          <Slideshow />
         </Route>
       </Switch>
     </Router>
