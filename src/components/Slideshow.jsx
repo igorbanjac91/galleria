@@ -1,9 +1,9 @@
 import React  from "react";
+import { Link } from "react-router-dom";
 import PaintingPage from "./PaintingPage";
+import { IconLogo } from "./Icons";
 
 const Slideshow = function() {
-
-  // const [ counter, setCounter ] = useState(0);
 
   let counter = 0
   function handleClickPrev() {
@@ -32,7 +32,7 @@ const Slideshow = function() {
 
   return(
     <div className="slideshow">
-      <h1>Slideshow</h1>
+      <SlideshowHeader />
       <div className="slideshow__container">
         <PaintingPage number={1} />
         <PaintingPage number={2} />
@@ -51,6 +51,26 @@ const Slideshow = function() {
         </button>
       </div>
     </div>
+  )
+}
+
+const SlideshowHeader = function() {
+
+  return (
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">
+              <IconLogo />
+            </Link>
+          </li>
+          <li>
+            <Link to="/">stop slideshow</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   )
 }
 
