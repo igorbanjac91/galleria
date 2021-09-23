@@ -1,0 +1,65 @@
+@mixin display {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 150px;
+}
+
+@mixin heading1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height:  64px;
+}
+
+@mixin heading2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height:  29px;
+}
+
+@mixin heading3  {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height:  22px;
+}
+ 
+@mixin subhead1  {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height:  19px;
+}
+ 
+@mixin subhead2  {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height:  19px;
+}
+
+@mixin link1  {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height:  15px;
+  letter-spacing: 2.5px;
+}
+ 
+@mixin link2  {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 11px;
+  letter-spacing: 2px;
+}
+
+@mixin body {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 29px;
+}
+ 
