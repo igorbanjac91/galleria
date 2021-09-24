@@ -13,7 +13,7 @@ const Header = function() {
   }, [location]) 
 
   function setUpAction() {
-    const action = currentPath == "/" ? "Start" : "Stop";
+    const action = currentPath === "/" ? "Start" : "Stop";
     setAction(action);
   }
 
@@ -27,7 +27,7 @@ const Header = function() {
               <IconLogo />
             </Link>
           </li>
-          { currentPath == "/" ? 
+          { currentPath === "/" ? 
           <li>
             <Link to="/slideshow">{action} slideshow</Link>
           </li>

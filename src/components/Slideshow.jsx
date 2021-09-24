@@ -1,6 +1,5 @@
 import React  from "react";
 import PaintingPage from "./PaintingPage";
-import Header from "./Header";
 
 const Slideshow = function() {
 
