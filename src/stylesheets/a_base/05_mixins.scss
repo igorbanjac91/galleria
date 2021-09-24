@@ -38,6 +38,7 @@
   font-size: 13px;
   font-weight: 700;
   line-height:  19px;
+  opacity: .7;
 }
 
 @mixin link1  {
@@ -47,12 +48,15 @@
   line-height:  15px;
   letter-spacing: 2.5px;
 }
- 
+
 @mixin link2  {
   font-family: 'Libre Baskerville', serif;
   font-size: 9px;
   font-weight: 700;
   line-height: 11px;
+  color: $gray-dark;
+  text-decoration: none;
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 

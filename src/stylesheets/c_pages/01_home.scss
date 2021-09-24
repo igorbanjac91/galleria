@@ -1,0 +1,53 @@
+.home {
+  padding: 24px;
+
+  &__painting-cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    li {
+      position: relative;
+      margin-bottom: 24px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    li:after {
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      height: 170px;
+      width: 100%;
+      content: "";
+      background-image: linear-gradient(hsla(0, 0%, 0%, .01), hsla(0, 0, 0, .84));
+    }
+
+    .card-info {
+      position: absolute;
+      bottom: 0;
+      padding: 32px;
+      // padding-left: 32px;
+      // padding-bottom: 32px;
+      background-color: transparent;
+      z-index: 99;
+
+      h2 {
+        @include heading2;
+        margin-bottom: 7px;
+        color: $light;
+      }
+
+      h3 {
+        @include subhead2;
+        color: $light;
+      }
+    }
+  }
+
+  &__painting-cards-container li:last-child {
+    margin-bottom: 0;
+  }
+}

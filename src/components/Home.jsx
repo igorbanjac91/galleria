@@ -35,7 +35,11 @@ const PaintingCard = (props) => {
   return (
     <li className="painting-card">
       <a href="#">
-        <img src={infoPainting.images.thumbnail} alt={infoPainting.name} />
+        <img  src={infoPainting.images.thumbnail} alt={infoPainting.name} />
+        <div className="card-info">
+          <h2>{infoPainting.name}</h2>
+          <h3>{infoPainting.artist.name}</h3>
+        </div>
       </a>
     </li>
   )

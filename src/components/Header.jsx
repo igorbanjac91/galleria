@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { IconLogo } from "./Icons";
+import { IconLogo32 } from "./Icons";
 
 const Header = function() {
 
@@ -19,12 +19,12 @@ const Header = function() {
 
   
   return (
-    <header>
+    <header className="main-header">
       <nav>
         <ul>
           <li>
             <Link to="/">
-              <IconLogo />
+              <IconLogo32 />
             </Link>
           </li>
           { currentPath === "/" ? 
