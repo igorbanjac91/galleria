@@ -4,24 +4,14 @@ import {
   Link,
   Route 
 } from "react-router-dom";
+import Header from "./components/Header";
 import Home from "./components/Home";
 import Slideshow from "./components/Slideshow";
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Logo</Link>
-            </li>
-            <li>
-              <Link to="/slideshow">Start Slideshow</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Home />
