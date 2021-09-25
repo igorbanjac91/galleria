@@ -1,4 +1,24 @@
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 450px) {
+
+  .home {
+
+    &__painting-cards-container {
+  
+      .card-info {
+        padding: 2em;
+  
+        h2 {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+@media only screen and (min-width: 600px) {
   
 /*----------------- HEADER ----------------------*/
 
@@ -96,6 +116,13 @@
       li:nth-child(15) {
         grid-row: 14 / 15;
         grid-column: 2 / 3;
+      }
+
+      .card-info {
+  
+        h2 {
+          font-size: 24px;
+        }
       }
     }
   }
