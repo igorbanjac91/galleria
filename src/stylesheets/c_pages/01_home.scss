@@ -1,23 +1,29 @@
 .home {
   padding: 24px;
-
+  
   &__painting-cards-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    gap: 24px 24px;
 
     li {
+      grid-column: 1 / 2;
       position: relative;
-      margin-bottom: 24px;
 
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      a {
+        position: relative;
+        bottom: 3px;
       }
     }
 
     li:after {
       position: absolute;
-      bottom: 3px;
+      bottom: 0;
       left: 0;
       height: 170px;
       width: 100%;
@@ -27,10 +33,8 @@
 
     .card-info {
       position: absolute;
-      bottom: 0;
+      bottom: 3px;
       padding: 32px;
-      // padding-left: 32px;
-      // padding-bottom: 32px;
       background-color: transparent;
       z-index: 99;
 

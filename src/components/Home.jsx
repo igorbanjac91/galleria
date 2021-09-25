@@ -45,5 +45,4 @@ const PaintingCard = (props) => {
   )
 }
 
-
 export default Home;
