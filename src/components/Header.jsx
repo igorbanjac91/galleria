@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { IconLogo32 } from "./Icons";
+import { IconLogo32, IconLogo48 } from "./Icons";
+import { useWindowSize } from "../utils";
 
 const Header = function() {
 
@@ -16,7 +17,6 @@ const Header = function() {
     const action = currentPath === "/" ? "Start" : "Stop";
     setAction(action);
   }
-
   
   return (
     <header className="main-header">
@@ -24,7 +24,10 @@ const Header = function() {
         <ul>
           <li>
             <Link to="/">
-              <IconLogo32 />
+              { useWindowSize().width >= 768
+              ? <IconLogo48 />
+              : <IconLogo32 />
+              }
             </Link>
           </li>
           { currentPath === "/" ? 
