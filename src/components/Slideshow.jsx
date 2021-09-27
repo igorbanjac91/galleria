@@ -1,14 +1,17 @@
-import React, { useState }  from "react";
+import React, { useEffect }  from "react";
 import { IconBackButton16, IconNextButton16 } from "./Icons";
 import PaintingPage from "./PaintingPage";
 
 const Slideshow = function(props) {
 
-  const [ currentSlide, setCurrentSlide ] = useState();
-
   let paintingsInfo =  props.paintingsInfo;
+  let counter = 0;
+  let currentSlide = "painting1";
+  
+  useEffect(() => {
+    disableButton(currentSlide);
+  }, []);
 
-  let counter = 0
   function handleClickPrev() {
     let slides = document.querySelectorAll(".painting-page");
     if (counter <= 0) {
@@ -19,6 +22,9 @@ const Slideshow = function(props) {
     slides.forEach(function(slide) {
       slide.style.transform = `translateX(${counter * -100}%)`;
     })
+    currentSlide = `painting${counter + 1}`;
+    console.log(currentSlide);
+    disableButton(currentSlide);
   }
   
   function handleClickNext() {
@@ -31,10 +37,30 @@ const Slideshow = function(props) {
     slides.forEach(function(slide) {
       slide.style.transform = `translateX(${counter * -100}%)`;
     })
+    currentSlide = `painting${counter + 1}`;
+    console.log(currentSlide);
+    disableButton(currentSlide);
+  }
+
+  function disableButton(slide) {
+    let btnPrev = document.querySelector(".btn-prev");
+    let btnNext = document.querySelector(".btn-next");
+    if (slide == "painting1") {
+      btnPrev.classList.add("disabled");
+      btnPrev.setAttribute("disabled", "");
+    } else if (slide == "painting15") {
+      btnNext.classList.add("disabled");
+      btnNext.setAttribute("disabled", "");
+    } else {
+      btnPrev.classList.remove("disabled");
+      btnPrev.removeAttribute("disabled");
+      btnNext.classList.remove("disabled");
+      btnNext.removeAttribute("disabled");
+    }
   }
 
   let paintingsSlides = paintingsInfo.map((painting, index) => {
-    return <PaintingPage key={index} painting={painting} />
+    return <PaintingPage id={`painting${index}`} key={index} painting={painting} />
   })
 
   return(
@@ -49,7 +75,7 @@ const Slideshow = function(props) {
         </div>
         <div className="buttons-slider">
           <button onClick={handleClickPrev} 
-                  className="btn-prev" 
+                  className="btn-prev"  
           ><IconBackButton16 />
           </button>
           <button onClick={handleClickNext} 
