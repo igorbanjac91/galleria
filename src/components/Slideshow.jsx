@@ -10,6 +10,7 @@ const Slideshow = function(props) {
   
   useEffect(() => {
     disableButton(currentSlide);
+    setProgresBar(1);
   }, []);
 
   function handleClickPrev() {
@@ -23,7 +24,7 @@ const Slideshow = function(props) {
       slide.style.transform = `translateX(${counter * -100}%)`;
     })
     currentSlide = `painting${counter + 1}`;
-    console.log(currentSlide);
+    setProgresBar(counter + 1);
     disableButton(currentSlide);
   }
   
@@ -38,7 +39,7 @@ const Slideshow = function(props) {
       slide.style.transform = `translateX(${counter * -100}%)`;
     })
     currentSlide = `painting${counter + 1}`;
-    console.log(currentSlide);
+    setProgresBar(counter + 1);
     disableButton(currentSlide);
   }
 
@@ -59,31 +60,45 @@ const Slideshow = function(props) {
     }
   }
 
+  function setProgresBar(n) {
+    let bar = document.querySelector(".progress-bar");
+    console.log(bar);
+    console.log(n);
+    if (n == 15) {
+      bar.style.width = (`calc(100% / 15 * ${n} - 2px)`);
+    } else {
+      bar.style.width = (`calc(100% / 15 * ${n} )`);
+    }
+  }
+
   let paintingsSlides = paintingsInfo.map((painting, index) => {
     return <PaintingPage id={`painting${index}`} key={index} painting={painting} />
   })
 
   return(
-    <div className="slideshow">
-      <div className="slideshow__container">
-        {paintingsSlides}
-      </div>
-      <div className="slideshow__footer">
-        <div className="painting-info">
-          <h3>Girl with a Pearl Earring</h3>
-          <h4>Johannes Vermeer</h4>
+    <div>
+      <div className="slideshow">
+        <div className="slideshow__container">
+          {paintingsSlides}
         </div>
-        <div className="buttons-slider">
-          <button onClick={handleClickPrev} 
-                  className="btn-prev"  
-          ><IconBackButton16 />
-          </button>
-          <button onClick={handleClickNext} 
-                  className="btn-next" 
-          ><IconNextButton16 />
-          </button>
+        <div className="slideshow__footer">
+          <div className="painting-info">
+            <h3>Girl with a Pearl Earring</h3>
+            <h4>Johannes Vermeer</h4>
+          </div>
+          <div className="buttons-slider">
+            <button onClick={handleClickPrev} 
+                    className="btn-prev"  
+            ><IconBackButton16 />
+            </button>
+            <button onClick={handleClickNext} 
+                    className="btn-next" 
+            ><IconNextButton16 />
+            </button>
+          </div>
         </div>
       </div>
+      <div className="progress-bar"></div>
     </div>
   )
 }

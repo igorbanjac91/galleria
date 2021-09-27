@@ -51,6 +51,15 @@
   border: 1px solid $gray-light-90;
 }
 
+.progress-bar {
+  position: relative;
+  bottom: 75px;
+  right: 0px;
+  z-index: 99;
+  width: calc(100% / 15);
+  border: 1px solid #000;
+}
+
 .painting-page {
   display: inline-block;
   width: 100%;
