@@ -16,30 +16,42 @@ const IconLogo32 = function() {
   )
 }
 
-const IconBackButton = function() {
+const IconBackButton24 = function() {
   return (
     <svg width={26} height={24} xmlns="http://www.w3.org/2000/svg">
       <g stroke="#000" fill="none" fillRule="evenodd">
-        <path
-          d="M24.166 1.843L3.627 12.113l20.539 10.269V1.843z"
-          strokeWidth={2}
-          />
+        <path d="M24.166 1.843L3.627 12.113l20.539 10.269V1.843z" strokeWidth={2} />
         <path fill="#D8D8D8" d="M.986.5h-1v22.775h1z" />
       </g>
     </svg>
   )
 }
 
-const IconNextButton = function() {
+const IconBackButton16 = function() {
+  return (
+    <svg width={17} height={16} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M.927 8.075L16.777.15V16L.927 8.075zm14.517 5.768V2.307L3.909 8.075l11.535 5.768z" fill="#000" />
+      <path fill="#D8D8D8" stroke="#000" strokeWidth={0.495} d="M.743.248H.248v15.354h.495z"/>
+    </svg>
+  )
+}
+
+const IconNextButton24 = function() {
   return (
     <svg width={26} height={24} xmlns="http://www.w3.org/2000/svg">
       <g stroke="#000" fill="none" fillRule="evenodd">
-        <path
-          d="M1.528 1.843l20.538 10.27L1.528 22.382V1.843z"
-          strokeWidth={2}
-        />
-        <path fill="#D8D8D8" d="M24.708.5h1v22.775h-1z" />
-      </g>
+      <path d="M1.528 1.843l20.538 10.27L1.528 22.382V1.843z" strokeWidth={2} />
+      <path fill="#D8D8D8" d="M24.708.5h1v22.775h-1z" />
+    </g>
+  </svg>
+  )
+}
+
+const IconNextButton16 = function() {
+  return (
+    <svg width={17} height={16} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M15.868 8.075L.018.15V16l15.85-7.925zM1.352 13.843V2.307l11.535 5.768-11.535 5.768z" fill="#000" />
+      <path fill="#D8D8D8" stroke="#000" strokeWidth={0.495} d="M16.053.248h.495v15.354h-.495z" />
     </svg>
   )
 }
@@ -47,12 +59,9 @@ const IconNextButton = function() {
 const IconViewImage = function() {
   return (
     <svg width={12} height={12} xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M7.714 0l1.5 1.5-2.357 2.357 1.286 1.286L10.5 2.786l1.5 1.5V0zM3.857 6.857L1.5 9.214 0 7.714V12h4.286l-1.5-1.5 2.357-2.357zm4.286 0L6.857 8.143 9.214 10.5l-1.5 1.5H12V7.714l-1.5 1.5zM4.286 0H0v4.286l1.5-1.5 2.357 2.357 1.286-1.286L2.786 1.5z"
-        fill="#FFF"
-      />
+      <path d="M7.714 0l1.5 1.5-2.357 2.357 1.286 1.286L10.5 2.786l1.5 1.5V0zM3.857 6.857L1.5 9.214 0 7.714V12h4.286l-1.5-1.5 2.357-2.357zm4.286 0L6.857 8.143 9.214 10.5l-1.5 1.5H12V7.714l-1.5 1.5zM4.286 0H0v4.286l1.5-1.5 2.357 2.357 1.286-1.286L2.786 1.5z" fill="#FFF" />
     </svg>
   )
 }
 
-export { IconLogo32, IconLogo48, IconBackButton, IconNextButton, IconViewImage };
+export { IconLogo32, IconLogo48, IconBackButton24, IconBackButton16, IconNextButton24, IconNextButton16, IconViewImage };

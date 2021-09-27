@@ -1,7 +1,12 @@
-import React  from "react";
+import React, { useState }  from "react";
+import { IconBackButton16, IconNextButton16 } from "./Icons";
 import PaintingPage from "./PaintingPage";
 
-const Slideshow = function() {
+const Slideshow = function(props) {
+
+  const [ currentSlide, setCurrentSlide ] = useState();
+
+  let paintingsInfo =  props.paintingsInfo;
 
   let counter = 0
   function handleClickPrev() {
@@ -12,7 +17,7 @@ const Slideshow = function() {
       counter--
     }
     slides.forEach(function(slide) {
-      slide.style.left = `${counter * -100}%`;
+      slide.style.transform = `translateX(${counter * -100}%)`;
     })
   }
   
@@ -24,28 +29,34 @@ const Slideshow = function() {
       counter++
     }
     slides.forEach(function(slide) {
-      slide.style.left = `${counter * -100}%`;
+      slide.style.transform = `translateX(${counter * -100}%)`;
     })
   }
+
+  let paintingsSlides = paintingsInfo.map((painting, index) => {
+    return <PaintingPage key={index} painting={painting} />
+  })
 
   return(
     <div className="slideshow">
       <div className="slideshow__container">
-        <PaintingPage number={1} />
-        <PaintingPage number={2} />
-        <PaintingPage number={3} />
-        <PaintingPage number={4} />
-        <PaintingPage number={5} />
-        <PaintingPage number={6} />
-        <PaintingPage number={7} />
+        {paintingsSlides}
       </div>
-      <div className="buttons-slider">
-        <button onClick={handleClickPrev} 
-                className="btn-prev" >prev
-        </button>
-        <button onClick={handleClickNext} 
-                className="btn-next" >next
-        </button>
+      <div className="slideshow__footer">
+        <div className="painting-info">
+          <h3>Girl with a Pearl Earring</h3>
+          <h4>Johannes Vermeer</h4>
+        </div>
+        <div className="buttons-slider">
+          <button onClick={handleClickPrev} 
+                  className="btn-prev" 
+          ><IconBackButton16 />
+          </button>
+          <button onClick={handleClickNext} 
+                  className="btn-next" 
+          ><IconNextButton16 />
+          </button>
+        </div>
       </div>
     </div>
   )
