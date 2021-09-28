@@ -1,5 +1,18 @@
 @media only screen and (min-width: 960px) {
 
+html {
+  height: 100vh;
+}
+
+body,
+#root {
+  height: 100%;
+}
+
+.page-wrapper {
+  height: calc(100% - 172px);
+}
+
 /*----------------- HOME ----------------------*/
 
   .home {
@@ -89,6 +102,72 @@
         h2 {
           font-size: 18px;
         }
+      }
+    }
+  }
+
+  /*----------------- SLIDESHOW ----------------------*/
+
+  .slideshow {
+    height: 100%;
+
+    &__container {
+      margin-bottom: auto;
+    }
+  }
+
+  .slideshow::after {
+    width: calc(100% + 62px);
+  }
+
+/*----------------- PAINTING PAGE ----------------------*/
+
+  .painting-page {
+
+    &__wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__image {
+      width: fit-content;
+      min-width: 475px;
+      height: 560px;
+    }
+
+    &__label {
+      right: auto;
+      left: 400px;
+      width: fit-content;
+      height: 100%;
+
+      .artist-image {
+        position: absolute;
+        align-self: flex-start;
+        right: auto;
+        left: 100px;
+        top: 500px
+      }
+    }
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+
+      .painting-year {
+        text-align: right;
+      }
+
+      .wrapper-info {
+        align-self: flex-end;
+        position: relative;
+        right: 120px;
+        margin: 0;
+        width: 41%;
+      }
+
+      .painting-description {
+        margin-top: -35px;
       }
     }
   }

@@ -77,7 +77,7 @@ const Slideshow = function(props) {
   })
 
   return(
-    <div>
+    <div className="page-wrapper">
       <div className="slideshow">
         <div className="slideshow__container">
           {paintingsSlides}
