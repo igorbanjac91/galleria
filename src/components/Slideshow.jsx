@@ -1,5 +1,6 @@
 import React, { useEffect }  from "react";
-import { IconBackButton16, IconNextButton16 } from "./Icons";
+import { useWindowSize } from "../utils";
+import { IconBackButton16, IconBackButton24, IconNextButton16, IconNextButton24 } from "./Icons";
 import PaintingPage from "./PaintingPage";
 
 const Slideshow = function(props) {
@@ -89,11 +90,19 @@ const Slideshow = function(props) {
           <div className="buttons-slider">
             <button onClick={handleClickPrev} 
                     className="btn-prev"  
-            ><IconBackButton16 />
+            >
+            { useWindowSize().width >= 768
+              ? <IconBackButton24 />
+              : <IconBackButton16 />
+            }
             </button>
             <button onClick={handleClickNext} 
                     className="btn-next" 
-            ><IconNextButton16 />
+            >
+            { useWindowSize().width >= 768
+              ? <IconNextButton24 />
+              : <IconNextButton16 />
+            }
             </button>
           </div>
         </div>

@@ -13,6 +13,7 @@
   }
 
   &__footer {
+    box-sizing: border-box;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -34,6 +35,10 @@
     }
 
     .buttons-slider {
+      display: flex;
+      justify-content: space-between;
+      width: 70px;
+
       button {
         background: none;
         border: none;
@@ -74,9 +79,9 @@
   &__image {
     position: relative;
     height: fit-content;
-
+    
     img {
-      max-width: 100%;
+      width: 100%;
       object-fit: contain;
     }
 

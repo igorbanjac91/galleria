@@ -1,26 +1,30 @@
 import React from "react";
 import { IconViewImage } from "./Icons";
+import { useWindowSize } from "../utils";
 
 const PaintingPage = function(props) {
 
   const name = props.painting.name;
   const artistName = props.painting.artist.name;
   const artistImageURL = props.painting.artist.image;
-  const imageURL = props.painting.images.hero.small;
+  const images = props.painting.images.hero;
   const year = props.painting.year;
   const textDescription = props.painting.description;
   const source = props.painting.source;
   
+  function setHeroImgae(images, windowSize) {
+    return windowSize.width >= 768 ? images.large : images.small
+  }
 
   return (
     <div className="painting-page">
       <div className="painting-page__wrapper">
         <div className="painting-page__image">
-          <img src={imageURL} alt={name} />
+          <img src={setHeroImgae(images, useWindowSize())} alt={name} />
           <button>
             <IconViewImage />
             VIEW IMAGE
-          </button>
+          </button>      
         </div>
         <section className="painting-page__label">
           <header className="painting-info">
@@ -33,8 +37,10 @@ const PaintingPage = function(props) {
         </section>
         <section className="painting-page__description">
           <span className="painting-year" >{year}</span>
-          <p className="painting-description">{textDescription}</p>
-          <a className="painting-link-go-to-source" href={source}>GO TO SOURCE</a>
+          <div className="wrapper-info">
+            <p className="painting-description">{textDescription}</p>
+            <a className="painting-link-go-to-source" href={source}>GO TO SOURCE</a>
+          </div>
         </section>
       </div>
     </div>

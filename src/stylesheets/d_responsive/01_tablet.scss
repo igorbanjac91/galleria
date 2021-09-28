@@ -1,5 +1,8 @@
 @media only screen and (min-width: 450px) {
 
+/*----------------- HOME ----------------------*/
+
+
   .home {
 
     &__painting-cards-container {
@@ -123,6 +126,120 @@
         h2 {
           font-size: 24px;
         }
+      }
+    }
+  }
+  
+/*----------------- SLIDESHOW ----------------------*/
+
+  .slideshow {
+    padding: 40px;
+    padding-bottom: 0;
+
+    &__footer {
+      padding: 25px 0;
+
+      .painting-info {
+
+        h3 {
+          font-size: 18px;
+        }
+        
+        h4 {
+          font-size: 13px;
+        }
+      }
+
+      .buttons-slider {
+        width: 100px;
+      }
+    }
+  }
+
+  .slideshow::after {
+    bottom: 91px;
+    width: calc(100% + 60px);
+  }
+
+  .progress-bar {
+    bottom: 93px;
+  }
+
+/*----------------- PAINTING PAGE ----------------------*/
+
+  .painting-page {
+
+    &__wrapper {
+      position: relative;
+    }
+
+    &__image {
+      width: fit-content;
+      height: 560px;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+
+      button {
+        top: auto;
+        bottom: 16px;
+      }
+    }
+
+    &__label {
+      position: absolute;
+      top: -1px;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      margin: 0;
+
+      
+      .painting-info {
+        align-self: flex-end;
+        width: 95%;
+        max-width: 445px;
+        padding-left: 65px;
+        padding-bottom: 65px;
+        padding-top: 0;
+        padding-right: 0;
+
+        h1 {
+          @include heading1;
+        }
+      }
+
+      .artist-image {
+        align-self: flex-end;
+        position: relative;
+        right: 50px;
+        width: 128px;
+        margin: 0;
+      }
+    }
+
+    &__description {
+      margin: 0;
+      margin-top: 64px;
+      
+      .painting-year {
+        font-size: 200px;
+        text-align: left;
+      }
+
+      .wrapper-info {
+        margin: 0 auto;
+        margin-top: -68px;
+        margin-bottom: 40px;
+        width: 66%;
+      }
+
+      .painting-link-go-to-source {
+        display: inline-block;
+        margin: 0 auto;
       }
     }
   }
