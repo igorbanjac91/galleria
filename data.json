@@ -9,7 +9,7 @@
       "name": "Vincent Van Gogh"
     },
     "images": {
-      "thumbnail": "./assets/starry-night/thumbnail.jpg",
+      "thumbnail": "/assets/starry-night/thumbnail.jpg",
       "hero": {
         "small": "./assets/starry-night/hero-small.jpg",
         "large": "./assets/starry-night/hero-large.jpg"
