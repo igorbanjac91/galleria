@@ -11,7 +11,6 @@ const Slideshow = function(props) {
   const [ currentPainting, setCurrentPainting ] = useState(paintingsInfo[counter]);
   let currentSlide = `painting${counter}`;
 
-
   useEffect(() => {
     disableButton(currentSlide);
     setProgresBar(counter + 1);

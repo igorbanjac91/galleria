@@ -33,9 +33,13 @@ const PaintingCard = (props) => {
   
   const infoPainting = props.infoPainting;
 
+  function scrollToTopPage() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
   return (
     <li className="painting-card">
-      <Link to={`/slideshow?=number${props.number}`}>
+      <Link to={`/slideshow?=number${props.number}`} onClick={scrollToTopPage}>
         <img  src={infoPainting.images.thumbnail} alt={infoPainting.name} />
         <div className="card-info">
           <h2>{infoPainting.name}</h2>
