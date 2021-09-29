@@ -40,7 +40,7 @@ const PaintingCard = (props) => {
   return (
     <li className="painting-card">
       <Link to={`/slideshow?=number${props.number}`} onClick={scrollToTopPage}>
-        <img  src={infoPainting.images.thumbnail} alt={infoPainting.name} />
+        <img  src={`${process.env.PUBLIC_URL}${infoPainting.images.thumbnail}`} alt={infoPainting.name} />
         <div className="card-info">
           <h2>{infoPainting.name}</h2>
           <h3>{infoPainting.artist.name}</h3>
