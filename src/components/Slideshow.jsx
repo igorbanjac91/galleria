@@ -14,7 +14,7 @@ const Slideshow = function(props) {
     disableButton(currentSlide);
     setProgresBar(counter + 1);
     setCurrentPainting(paintingsInfo[counter]);
-  }, [counter]);
+  }, [counter, paintingsInfo]);
 
   function handleClickPrev() {
     if (counter > 0) setCounter(counter - 1);
@@ -79,10 +79,12 @@ const Slideshow = function(props) {
           {paintingsSlides}
         </div>
         <div className="slideshow__footer">
-          <div className="painting-info">
-            <h3>{currentPainting.name}</h3>
-            <h4>{currentPainting.artist.name}</h4>
-          </div>
+          { currentPainting && 
+            <div className="painting-info">
+              <h3>{currentPainting.name}</h3>
+              <h4>{currentPainting.artist.name}</h4>
+            </div>
+          }
           <div className="buttons-slider">
             <button onClick={handleClickPrev} 
                     className="btn-prev"  
@@ -104,13 +106,15 @@ const Slideshow = function(props) {
         </div>
       </div>
       <div className="progress-bar"></div>
-      <div className={`image-gallery`}>
+      <div className="image-gallery">
         <div className="image-gallery__container">
           <a href="#" 
               className="link-close"
               onClick={() => hideGallery(counter)}>close</a>
-          <img src={currentPainting.images.gallery} 
-               alt={currentPainting.name} />
+          { currentPainting && 
+            <img src={currentPainting.images.gallery} 
+                 alt={currentPainting.name} />
+          }
         </div>
       </div>
     </div>
