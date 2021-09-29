@@ -23,6 +23,7 @@ function App() {
       .get("data.json")
       .then( response => {
         setPaintingsInfo(response.data);
+        console.log(response.data)
       })
       .catch(e => {
         console.log(e);

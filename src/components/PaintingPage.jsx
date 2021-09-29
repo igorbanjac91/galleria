@@ -25,7 +25,7 @@ const PaintingPage = function (props) {
     <div className="painting-page" style={{"transform": `translateX(${counter  * -100}%)`}}>
       <div className="painting-page__wrapper">
         <div className="painting-page__image">
-          <img src={setHeroImgae(images, useWindowSize())} alt={name} />
+          <img src={ setHeroImgae(images, useWindowSize())} alt={name} />
           <button onClick={() => showImageGallery(props.id)}>
             <IconViewImage />
             VIEW IMAGE

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = props => {
 
@@ -17,7 +18,7 @@ const PaintingCardsContainer = props => {
   const paintingsInfo = props.paintingsInfo;
 
   const listCards = paintingsInfo.map( (info, index) => {
-    return <PaintingCard key={index} infoPainting={info} />
+    return <PaintingCard key={index} number={index} infoPainting={info} />
   })
 
   return (
@@ -34,13 +35,13 @@ const PaintingCard = (props) => {
 
   return (
     <li className="painting-card">
-      <a href="#">
+      <Link to={`/slideshow?=number${props.number}`}>
         <img  src={infoPainting.images.thumbnail} alt={infoPainting.name} />
         <div className="card-info">
           <h2>{infoPainting.name}</h2>
           <h3>{infoPainting.artist.name}</h3>
         </div>
-      </a>
+      </Link>
     </li>
   )
 }

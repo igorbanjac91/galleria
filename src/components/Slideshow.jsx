@@ -1,14 +1,17 @@
 import React, { useEffect, useState }  from "react";
+import { useParams } from "react-router";
 import { useWindowSize } from "../utils";
 import { IconBackButton16, IconBackButton24, IconNextButton16, IconNextButton24 } from "./Icons";
 import PaintingPage from "./PaintingPage";
 
 const Slideshow = function(props) {
 
+  let numberSlide = Number(window.location.search.substr(-1));
   let paintingsInfo =  props.paintingsInfo;
-  const [ counter, setCounter ] = useState(0);
+  const [ counter, setCounter ] = useState(numberSlide);
   const [ currentPainting, setCurrentPainting ] = useState(paintingsInfo[counter]);
   let currentSlide = `painting${counter}`;
+
 
   useEffect(() => {
     disableButton(currentSlide);
@@ -65,7 +68,8 @@ const Slideshow = function(props) {
     container.style.display = "block";
   }
 
-  function hideGallery() {
+  function hideGallery(e) {
+    e.preventDefault();
     let container = document.querySelector(`.image-gallery`)
     container.style.display = "none";
     let body = document.querySelector('body');
@@ -110,7 +114,7 @@ const Slideshow = function(props) {
         <div className="image-gallery__container">
           <a href="#" 
               className="link-close"
-              onClick={() => hideGallery(counter)}>close</a>
+              onClick={hideGallery}>close</a>
           { currentPainting && 
             <img src={currentPainting.images.gallery} 
                  alt={currentPainting.name} />
