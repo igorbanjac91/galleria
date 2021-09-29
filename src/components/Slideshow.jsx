@@ -5,7 +5,7 @@ import PaintingPage from "./PaintingPage";
 
 const Slideshow = function(props) {
 
-  let numberSlide = Number(window.location.search.substr(-1));
+  let numberSlide = Number(window.location.search.replace("?=number", ""));
   let paintingsInfo =  props.paintingsInfo;
   const [ counter, setCounter ] = useState(numberSlide);
   const [ currentPainting, setCurrentPainting ] = useState(paintingsInfo[counter]);
