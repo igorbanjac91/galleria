@@ -1,0 +1,35 @@
+.disabled { 
+  fill: $gray-light-85;
+  opacity: 0.15;
+}
+
+.painting-page__image {
+
+  button {
+    box-sizing: border-box;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 152px;
+    height: 40px;
+    padding: 14px 16px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 15px;
+    letter-spacing: 2.1px;
+    background-color: hsla(0, 0, 0, .75);
+    border: none
+  }
+}
+
+.slideshow__footer {
+
+  button {
+    background: none;
+    border: none;
+  }
+}

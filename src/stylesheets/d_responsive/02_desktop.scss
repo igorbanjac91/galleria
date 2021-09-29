@@ -93,6 +93,24 @@
       }
     }
   }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .home {
+
+    &__painting-cards-container {
+      gap: 40px;
+
+      .card-info {
+        padding: 1em;
+  
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
 
   /*----------------- SLIDESHOW ----------------------*/
 
@@ -156,24 +174,6 @@
 
       .painting-description {
         margin-top: -35px;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-
-  .home {
-
-    &__painting-cards-container {
-      gap: 40px;
-
-      .card-info {
-        padding: 1em;
-  
-        h2 {
-          font-size: 24px;
-        }
       }
     }
   }

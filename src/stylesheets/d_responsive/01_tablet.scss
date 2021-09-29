@@ -16,7 +16,6 @@
       }
     }
   }
-
 }
 
 
@@ -174,12 +173,11 @@
     }
 
     &__image {
-      width: fit-content;
       height: 560px;
 
       img {
         height: 100%;
-        object-fit: contain;
+        width: auto;
       }
 
       button {
@@ -240,6 +238,29 @@
       .painting-link-go-to-source {
         display: inline-block;
         margin: 0 auto;
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+
+  .painting-page {
+
+    &__wrapper {
+      position: relative;
+    }
+
+    &__image {
+      width: fit-content;
+      height: 560px;
+      // height: fit-content;
+
+      img {
+        // height: 100%;
+        object-fit: contain;
       }
     }
   }

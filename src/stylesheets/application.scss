@@ -1,24 +1,15 @@
 @import 'a_base/01_reset';
-@import 'a_base/02_colors';
-@import 'a_base/03_typography';
-@import 'a_base/04_variables';
-@import 'a_base/05_mixins';
-@import 'a_base/06_utilities';
+@import 'a_base/02_typography';
+@import 'a_base/03_variables';
+@import 'a_base/04_mixins';
+@import 'a_base/05_utilities';
 
 @import 'b_components/01_header';
-@import 'b_components/02_nav';
-@import 'b_components/03_footer';
-@import 'b_components/04_headings';
-@import 'b_components/05_buttons';
-@import 'b_components/06_forms';
-@import 'b_components/07_tables';
-@import 'b_components/08_icons';
-@import 'b_components/09_about';
-@import 'b_components/10_lists';
+@import 'b_components/02_buttons';
 
 @import 'c_pages/01_home';
-@import 'c_pages/02_slideshow';
-@import 'c_pages/03_painting';
+@import 'c_pages/02_painting';
+
 
 @import 'd_responsive/01_tablet';
 @import 'd_responsive/02_desktop';
