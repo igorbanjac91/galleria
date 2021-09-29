@@ -1,5 +1,4 @@
 import React, { useEffect, useState }  from "react";
-import { useParams } from "react-router";
 import { useWindowSize } from "../utils";
 import { IconBackButton16, IconBackButton24, IconNextButton16, IconNextButton24 } from "./Icons";
 import PaintingPage from "./PaintingPage";
@@ -30,10 +29,10 @@ const Slideshow = function(props) {
   function disableButton(slide) {
     let btnPrev = document.querySelector(".btn-prev");
     let btnNext = document.querySelector(".btn-next");
-    if (slide == "painting0") {
+    if (slide === "painting0") {
       btnPrev.classList.add("disabled");
       btnPrev.setAttribute("disabled", "");
-    } else if (slide == "painting14") {
+    } else if (slide === "painting14") {
       btnNext.classList.add("disabled");
       btnNext.setAttribute("disabled", "");
     } else {
@@ -46,7 +45,7 @@ const Slideshow = function(props) {
 
   function setProgresBar(n) {
     let bar = document.querySelector(".progress-bar");
-    if (n == 15) {
+    if (n === 15) {
       bar.style.width = (`calc(100% / 15 * ${n} - 2px)`);
     } else {
       bar.style.width = (`calc(100% / 15 * ${n} )`);
@@ -112,9 +111,12 @@ const Slideshow = function(props) {
       <div className="progress-bar"></div>
       <div className="image-gallery">
         <div className="image-gallery__container">
-          <a href="#" 
-              className="link-close"
-              onClick={hideGallery}>close</a>
+          <div className="btn-container">
+            <button
+                className="btn-close"
+                onClick={hideGallery}>close
+            </button>
+          </div>
           { currentPainting && 
             <img src={currentPainting.images.gallery} 
                  alt={currentPainting.name} />
