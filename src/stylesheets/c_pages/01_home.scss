@@ -50,6 +50,10 @@ body,
       background-image: linear-gradient(hsla(0, 0%, 0%, .01), hsla(0, 0, 0, .84));
     }
 
+    li:hover img{
+      opacity: 0.5;
+    }
+
     .card-info {
       position: absolute;
       bottom: 3px;

@@ -3,6 +3,10 @@
   opacity: 0.15;
 }
 
+button {
+  cursor: pointer;
+}
+
 .painting-page__image {
 
   button {
@@ -24,6 +28,10 @@
     background-color: hsla(0, 0, 0, .75);
     border: none
   }
+  
+  button:hover {
+    background-color: hsla(0, 0, 100, .25);
+  }
 }
 
 .slideshow__footer {
@@ -31,5 +39,9 @@
   button {
     background: none;
     border: none;
+  }
+
+  button:hover:enabled path {
+    stroke: $gray-hover;
   }
 }

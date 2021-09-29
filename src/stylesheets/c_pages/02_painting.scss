@@ -150,6 +150,10 @@
       text-decoration: underline;
       text-decoration-color: $gray-dark;
     }
+
+    .painting-link-go-to-source:hover {
+      color: #000;
+    }
   }
 }
 

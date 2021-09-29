@@ -12,4 +12,8 @@
   a {
     @include link2;
   }
+
+  a:hover {
+    color: #000;
+  }
 }
