@@ -1,3 +1,16 @@
+html {
+  height: 100vh;
+}
+
+body,
+#root {
+  height: 100vh;
+}
+
+.page-wrapper {
+  height: calc(100% - 172px);
+}
+
 .home {
   padding: 24px;
   

@@ -1,0 +1,16 @@
+.shadow::after {
+  position: fixed;
+  content: " ";
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.85;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}

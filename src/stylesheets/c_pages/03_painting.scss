@@ -1,7 +1,6 @@
 .slideshow {
   display: flex;
   flex-direction: column;
-  height: fit-content;
   padding: 24px;
   padding-bottom: 0;
 
@@ -169,4 +168,45 @@
     }
   }
 }
+
+/*------------------------ IMAGE GALLERY ---------------------------*/
+
+.image-gallery {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; 
+  transform: translateY(-50%);
+  object-fit: scale-down;
+  z-index: 98;
+  
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  
+    img {
+      width: 90%;
+      max-width: fit-content;
+    }
+  
+    .link-close {
+      width: 90%;
+      margin-bottom: 33px;
+      @include link1;
+      color: #fff; 
+      text-align: right;
+      text-transform: uppercase;
+    }
+  }
+}
+
 

@@ -2,7 +2,7 @@ import React from "react";
 import { IconViewImage } from "./Icons";
 import { useWindowSize } from "../utils";
 
-const PaintingPage = function(props) {
+const PaintingPage = function (props) {
 
   const name = props.painting.name;
   const artistName = props.painting.artist.name;
@@ -11,20 +11,25 @@ const PaintingPage = function(props) {
   const year = props.painting.year;
   const textDescription = props.painting.description;
   const source = props.painting.source;
-  
+  const counter = props.counter;
+
   function setHeroImgae(images, windowSize) {
     return windowSize.width >= 768 ? images.large : images.small
   }
 
+  function showImageGallery() {
+    props.showImageGallery();
+  }
+
   return (
-    <div className="painting-page">
+    <div className="painting-page" style={{"transform": `translateX(${counter  * -100}%)`}}>
       <div className="painting-page__wrapper">
         <div className="painting-page__image">
           <img src={setHeroImgae(images, useWindowSize())} alt={name} />
-          <button>
+          <button onClick={() => showImageGallery(props.id)}>
             <IconViewImage />
             VIEW IMAGE
-          </button>      
+          </button>
         </div>
         <section className="painting-page__label">
           <header className="painting-info">

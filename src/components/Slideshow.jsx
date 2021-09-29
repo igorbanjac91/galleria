@@ -1,4 +1,4 @@
-import React, { useEffect }  from "react";
+import React, { useEffect, useState }  from "react";
 import { useWindowSize } from "../utils";
 import { IconBackButton16, IconBackButton24, IconNextButton16, IconNextButton24 } from "./Icons";
 import PaintingPage from "./PaintingPage";
@@ -6,51 +6,31 @@ import PaintingPage from "./PaintingPage";
 const Slideshow = function(props) {
 
   let paintingsInfo =  props.paintingsInfo;
-  let counter = 0;
-  let currentSlide = "painting1";
-  
+  const [ counter, setCounter ] = useState(0);
+  const [ currentPainting, setCurrentPainting ] = useState(paintingsInfo[counter]);
+  let currentSlide = `painting${counter}`;
+
   useEffect(() => {
     disableButton(currentSlide);
-    setProgresBar(1);
-  }, []);
+    setProgresBar(counter + 1);
+    setCurrentPainting(paintingsInfo[counter]);
+  }, [counter]);
 
   function handleClickPrev() {
-    let slides = document.querySelectorAll(".painting-page");
-    if (counter <= 0) {
-      return
-    } else {
-      counter--
-    }
-    slides.forEach(function(slide) {
-      slide.style.transform = `translateX(${counter * -100}%)`;
-    })
-    currentSlide = `painting${counter + 1}`;
-    setProgresBar(counter + 1);
-    disableButton(currentSlide);
+    if (counter > 0) setCounter(counter - 1);
   }
   
   function handleClickNext() {
-    let slides = document.querySelectorAll(".painting-page");
-    if (counter >= slides.length -1) {
-      return
-    } else {
-      counter++
-    }
-    slides.forEach(function(slide) {
-      slide.style.transform = `translateX(${counter * -100}%)`;
-    })
-    currentSlide = `painting${counter + 1}`;
-    setProgresBar(counter + 1);
-    disableButton(currentSlide);
+    if (counter < 14) setCounter(counter + 1)
   }
 
   function disableButton(slide) {
     let btnPrev = document.querySelector(".btn-prev");
     let btnNext = document.querySelector(".btn-next");
-    if (slide == "painting1") {
+    if (slide == "painting0") {
       btnPrev.classList.add("disabled");
       btnPrev.setAttribute("disabled", "");
-    } else if (slide == "painting15") {
+    } else if (slide == "painting14") {
       btnNext.classList.add("disabled");
       btnNext.setAttribute("disabled", "");
     } else {
@@ -63,8 +43,6 @@ const Slideshow = function(props) {
 
   function setProgresBar(n) {
     let bar = document.querySelector(".progress-bar");
-    console.log(bar);
-    console.log(n);
     if (n == 15) {
       bar.style.width = (`calc(100% / 15 * ${n} - 2px)`);
     } else {
@@ -73,8 +51,26 @@ const Slideshow = function(props) {
   }
 
   let paintingsSlides = paintingsInfo.map((painting, index) => {
-    return <PaintingPage id={`painting${index}`} key={index} painting={painting} />
+    return <PaintingPage id={`painting${index}`} 
+                         key={index} 
+                         painting={painting} 
+                         counter={counter}
+                         showImageGallery={showImageGallery} />
   })
+
+  function showImageGallery() {
+    let body = document.querySelector('body');
+    body.classList.add("shadow");
+    let container = document.querySelector(`.image-gallery`)
+    container.style.display = "block";
+  }
+
+  function hideGallery() {
+    let container = document.querySelector(`.image-gallery`)
+    container.style.display = "none";
+    let body = document.querySelector('body');
+    body.classList.remove("shadow");
+  }
 
   return(
     <div className="page-wrapper">
@@ -84,8 +80,8 @@ const Slideshow = function(props) {
         </div>
         <div className="slideshow__footer">
           <div className="painting-info">
-            <h3>Girl with a Pearl Earring</h3>
-            <h4>Johannes Vermeer</h4>
+            <h3>{currentPainting.name}</h3>
+            <h4>{currentPainting.artist.name}</h4>
           </div>
           <div className="buttons-slider">
             <button onClick={handleClickPrev} 
@@ -108,6 +104,15 @@ const Slideshow = function(props) {
         </div>
       </div>
       <div className="progress-bar"></div>
+      <div className={`image-gallery`}>
+        <div className="image-gallery__container">
+          <a href="#" 
+              className="link-close"
+              onClick={() => hideGallery(counter)}>close</a>
+          <img src={currentPainting.images.gallery} 
+               alt={currentPainting.name} />
+        </div>
+      </div>
     </div>
   )
 }
