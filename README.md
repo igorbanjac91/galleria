@@ -57,6 +57,8 @@ Users should be able to:
 
 ### What I learned
 
+Improved workflow with React
+
 ### Continued development
 
 - Run slidwshow automaticly 
