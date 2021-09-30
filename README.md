@@ -1,4 +1,4 @@
-# Audiophile e-commerce website
+# Galleria Slideshow Site
 
 This is a solution to the [Gallery slideshow site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
